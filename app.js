@@ -34,28 +34,37 @@ let images = [
 ];
 
 const createThumbnails = (arrayOfImages) => {
+  // it then loops through the arrayOfImages using forEach (which takes a callback function which in this case image is a parameter of the arrow function that has been used instead of a callback function)
   arrayOfImages.forEach((image) => {
+    // this line is the same as writing .forEach(function(image))
+    // creates an image tag (in the HTML)
     let imgElement = document.createElement("img");
-    // create an image tag
-
+    // sets the image tag's src to be image.url
     imgElement.src = image.url;
+    // sets alt to be image.alt
     imgElement.alt = image.alt;
-    // set the img tag src to be image.url
-    // set the alt to be image.alt
-
-    // append to thumbcontainer
+    // add a class to the image element for styling
+    // imgElement.classList.add("thumbnail-image");
+    // appends this imageElement to the thumbnail container (so that it appears on the page)
+    imgElement.classList.add("thumbnail-image");
     thumbContainer.appendChild(imgElement);
-
-    // imgElement.addEventListner("click", () => {
-    //   //   console.log(image.alt);
-    // });
+    // add an event listner to the image that has been created so that when you click it, it appears as the main image
+    imgElement.addEventListener("click", () => {
+      createDisplayImg(image); // image represents each individual image object from the 'array of images'
+    });
   });
 };
-// function createDisplayImg(image) {
-//   let displayContainer = document.createElement("img");
-//   displayContainer.src = image.url;
-//   displayContainer.src = image.alt;
 
-// }
+// const displayImage.createElement ("img")
+
+// a function that creates a display image when the thumbnail image is clicked
+function createDisplayImg(image) {
+  displayImage.innerHTML = "";
+  let displayImage2 = document.createElement("img");
+  displayImage2.src = image.url;
+  displayImage2.alt = image.alt;
+  displayImage.classList.add("display-image");
+  displayImage.appendChild(displayImage2);
+}
 
 createThumbnails(images);

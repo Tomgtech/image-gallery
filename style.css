@@ -1,49 +1,46 @@
-img {
-  height: 50px;
-  width: 50px;
+html {
+  font-family: "Poppins", sans-serif;
+  font-size: larger;
+  color: white;
 }
 
-/* body {
+body {
   margin: 0;
   padding: 0;
   height: 100vh;
   width: 100vh;
   background-color: #000000;
-  color: white;
   margin: 3rem;
 }
 
-img {
-  height: 100px;
-  width: auto;
-}
-
-#image-track {
-  width: 150px;
-  height: 150px;
+#thumb-container {
   display: flex;
   flex-direction: row;
-  object-position: center;
+  height: 100px;
+  width: 100px;
+}
+
+.display-image {
+  height: 300px;
+  width: 300px;
+  display: flex;
+}
+
+.display-image.enlarged {
+  height: 500px;
+  width: 500px;
 }
 
 .text {
-  font-size: larger;
-  font-family: sans-serif;
   position: absolute;
-  bottom: 1rem;
-  left: 1rem;
-  z-index: 10;
-  text-align: center;
-  padding-right: 10px;
-  padding-left: 10px;
+  bottom: 0;
 }
 
 button {
   border-radius: 10px;
-  background-color: gray;
+  background-color: rgb(255, 255, 255);
   padding: 3px;
 }
-
 button#next {
   position: absolute;
   top: 50vh;
@@ -54,4 +51,4 @@ button#prev {
   position: absolute;
   top: 50vh;
   left: 5vw;
-} */
+}
